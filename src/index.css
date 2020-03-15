@@ -12,3 +12,25 @@ body {
   margin: auto;
   background: linear-gradient(to right, rgb(36, 37, 42) 0%, rgb(36, 37, 42) 100%);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: #11111100;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.1); 
+}

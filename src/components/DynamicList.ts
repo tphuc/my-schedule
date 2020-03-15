@@ -157,7 +157,7 @@ class DynamicList extends Neuon.Element {
 
 
     setItems(items: any[]): void{
-        this.Items = items;
+        this.Items = items || [];
         this.shadowRoot.getElementById('items').innerHTML = ''
         this.Items.forEach((name:any,idx:number) => {
             var item = new Item(name);

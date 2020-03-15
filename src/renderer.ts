@@ -1,9 +1,6 @@
 import './index.css';
-import ClassRow from './components/ClassRow';
 import AppLayout from './components/Main'
-import DayBlock from './components/DayBlock';
-
-import Store from 'electron-store';
+import Storage from './components/Storage';
 
 
 
@@ -13,11 +10,10 @@ import Store from 'electron-store';
 
 class App {
     Layout: AppLayout;
-    Storage: Store
 
     constructor() {
+        this.initStore();
         this.Layout = new AppLayout();
-        this.initStore()
        
         document.getElementById('root').appendChild(this.Layout)
 
@@ -25,8 +21,8 @@ class App {
     }
 
     initStore():void{
-        this.Storage = new Store()
-        this.Storage.set('table', {
+
+        Storage.set('table', {
             monday: [
             ],
             tuesday: [
@@ -48,8 +44,10 @@ class App {
                 
             ]
         })
-        // this.Storage.set('courses', [])
-        // this.Storage.set('timestamps', [])
+        if(Storage.get('courses', null) === null)
+            Storage.set('courses', [])
+        if(Storage.get('timestamps', null) === null)
+            Storage.set('timestamps', [])
     }
 
 }

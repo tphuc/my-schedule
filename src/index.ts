@@ -18,9 +18,16 @@ const createWindow = () => {
     },
     icon: './assets/Icons/logo.ico'
   });
+  // mainWindow.setMenu(null)
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+
+  // 2. Create the custom titlebar with your own settings
+  //    To make it work, we just need to provide the backgroundColor property
+  //    Other properties are optional.
+
 
   // Open the DevTools.
 };

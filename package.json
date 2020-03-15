@@ -5,10 +5,13 @@
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
+    "build": "electron-builder --win",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
     "lint": "eslint --ext .ts ."
   },
   "keywords": [],
@@ -20,7 +23,6 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -78,7 +80,9 @@
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "css-loader": "^3.0.0",
+    "custom-electron-titlebar": "^3.2.2-hotfix62",
     "electron": "8.1.1",
+    "electron-builder": "^22.4.1",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
